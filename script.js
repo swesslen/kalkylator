@@ -53,6 +53,11 @@ function buttonClicked(text) {
     } else {
         display.innerHTML += text;
     }
+    console.log(display.innerHTML.length);
+    
+    if (display.innerHTML.length > 6) {
+        display.style.fontSize = "20px"
+    }
 }
 
 function createButtons(main) {
@@ -63,6 +68,7 @@ function createButtons(main) {
     buttonGrid.style.gridTemplateRows = "repeat(5, 1fr)"
     buttonGrid.style.gap = "5px"
     buttonGrid.style.margin = "10px"
+    buttonGrid.style.height = "200px"
 
     for(let buttonArray of buttonMatrix) {
         // console.log(buttonArray);
@@ -75,6 +81,8 @@ function createButtons(main) {
             button.style.border = "none"
             button.style.borderRadius = "5px"
             button.style.cursor = "pointer"
+            button.style.fontSize = "15"
+            
 
             button.setAttribute(`onclick`, `buttonClicked("${item}")`)
 
